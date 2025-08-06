@@ -17,11 +17,22 @@
 
     {% if data %}
       <div class="result">
-        <h2>Case Details:</h2>
-        <pre>{{ data }}</pre>  <!-- Display plain data for now -->
+        {% if data.result %}
+          <h2>📄 Case Details:</h2>
+          <pre>{{ data.result }}</pre>
+
+          {% if "John Doe" in data.result %}
+            <p style="color: orange; font-weight: bold;">
+              ⚠️ This is mock data shown for demo purposes. Run locally to fetch real case details.
+            </p>
+          {% endif %}
+
+        {% elif data.error %}
+          <p style="color: red; font-weight: bold;">❌ {{ data.error }}</p>
+        {% endif %}
       </div>
     {% endif %}
+    
   </div>
 </body>
 </html>
-
