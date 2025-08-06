@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>CNR Number Case Search</title>
+  <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+  <div class="search-container">
+    <h1>CNR Number Case Search</h1>
+
+    <form method="POST">
+      <label for="cnr">Enter CNR Number:</label>
+      <input type="text" id="cnr" name="cnr" placeholder="e.g., MHAU010000012022" required>
+      <button type="submit">Search</button>
+    </form>
+
+    {% if data %}
+      <div class="result">
+        <h2>Case Details:</h2>
+        <pre>{{ data }}</pre>  <!-- Display plain data for now -->
+      </div>
+    {% endif %}
+  </div>
+</body>
+</html>
+

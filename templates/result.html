@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html>
+<head><title>Result</title></head>
+<body>
+    {% if data.error %}
+        <h3>Error: {{ data.error }}</h3>
+    {% else %}
+        <h3>Party Name: {{ data.party_name }}</h3>
+        <p>Filing Date: {{ data.filing_date }}</p>
+        <p>Next Hearing: {{ data.next_hearing }}</p>
+        <p><a href="{{ data.pdf_link }}">Download Latest Order (PDF)</a></p>
+    {% endif %}
+    <a href="/">Search another case</a>
+</body>
+</html>
